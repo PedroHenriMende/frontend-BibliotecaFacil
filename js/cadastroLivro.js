@@ -9,7 +9,7 @@ async function cadastrarLivro() {
         "quantTotal": document.querySelectorAll("input")[5].value,
         "quantDisponivel": document.querySelectorAll("input")[6].value,
         "valorAquisicao": document.querySelectorAll("input")[7].value,
-        "statusEmprestimo": document.querySelectorAll("input")[8].value
+        "statusLivroEmprestado": document.querySelectorAll("input")[8].value
     }
 
     console.log(livroDTO);

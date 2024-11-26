@@ -9,7 +9,7 @@ async function cadastrarAluno() {
         "celular": document.querySelectorAll("input")[5].value
     }
 
-    console.log(alunoDTO    );
+    console.log(alunoDTO);
 
     try {
         const respostaServidor = await fetch("http://localhost:3333/novo/aluno", {

@@ -30,7 +30,7 @@ async function criarTabelaLivros(livros) {
 
         // Cria as células da tabela com base nos dados do livro
         const celulaID = document.createElement('td');
-        celulaID.textContent = livro.id; // Propriedade 'id'
+        celulaID.textContent = livro.idLivro; // Propriedade 'id'
         linha.appendChild(celulaID);
 
         const celulaTitulo = document.createElement('td');
@@ -54,15 +54,20 @@ async function criarTabelaLivros(livros) {
         linha.appendChild(celulaISBN);
 
         const celulaQuantidadeTotal = document.createElement('td');
-        celulaQuantidadeTotal.textContent = livro.quantidadeTotal; // Propriedade 'quantidadeTotal'
+        celulaQuantidadeTotal.textContent = livro.quantTotal; // Propriedade 'quantidadeTotal'
         linha.appendChild(celulaQuantidadeTotal);
 
         const celulaQuantidadeDisponivel = document.createElement('td');
-        celulaQuantidadeDisponivel.textContent = livro.quantidadeDisponivel; // Propriedade 'quantidadeDisponivel'
+        celulaQuantidadeDisponivel.textContent = livro.quantDisponivel; // Propriedade 'quantidadeDisponivel'
         linha.appendChild(celulaQuantidadeDisponivel);
 
+
+        const celulavalorAquisicao = document.createElement('td');
+        celulavalorAquisicao.textContent = livro.valorAquisicao; // Propriedade 'valor'
+        linha.appendChild(celulavalorAquisicao);
+
         const celulaStatusEmprestimo = document.createElement('td');
-        celulaStatusEmprestimo.textContent = livro.statusEmprestimo ? "Emprestado" : "Disponível"; // Exibe status do livro
+        celulaStatusEmprestimo.textContent = livro.statusLivroEmprestado; // Exibe status do livro
         linha.appendChild(celulaStatusEmprestimo);
 
         // Cria a célula para as opções (ícones de editar e excluir)

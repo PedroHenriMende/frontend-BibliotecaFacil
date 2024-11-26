@@ -45,7 +45,7 @@ async function criarTabelaAlunos(alunos) {
         linhas.appendChild(celulaSobrenome);
 
         const celulaData = document.createElement('td');
-        celulaData.textContent = aluno.dataNascimento;
+        celulaData.textContent = new Date(aluno.dataNascimento).toLocaleDateString('pt-br');
         linhas.appendChild(celulaData);
 
         const celulaEndereco = document.createElement('td');

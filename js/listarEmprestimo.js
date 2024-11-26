@@ -37,15 +37,15 @@ async function criarTabelaEmprestimos(emprestimos) {
         linha.appendChild(celulaIDLivro);
 
         const celulaDataEmprestimo = document.createElement('td');
-        celulaDataEmprestimo.textContent = emprestimo.dataEmprestimo; // Campo esperado no formato "AAAA-MM-DD"
+        celulaDataEmprestimo.textContent = new Date(emprestimo.dataEmprestimo).toLocaleDateString('pt-br'); // Campo esperado no formato "AAAA-MM-DD"
         linha.appendChild(celulaDataEmprestimo);
 
         const celulaDataDevolucao = document.createElement('td');
-        celulaDataDevolucao.textContent = emprestimo.dataDevolucao ? emprestimo.dataDevolucao : "Pendente"; // Exibe "Pendente" se o campo estiver vazio
+        celulaDataDevolucao.textContent = new Date(emprestimo.dataDevolucao ? emprestimo.dataDevolucao : "Pendente").toLocaleDateString('pt-br'); // Exibe "Pendente" se o campo estiver vazio
         linha.appendChild(celulaDataDevolucao);
 
         const celulaStatusEmprestimo = document.createElement('td');
-        celulaStatusEmprestimo.textContent = emprestimo.statusEmprestimo ? "Ativo" : "Concluído"; // Status como "Ativo" ou "Concluído"
+        celulaStatusEmprestimo.textContent = emprestimo.statusEmprestimo ? "Emprestado" : "Concluído"; // Status como "Ativo" ou "Concluído"
         linha.appendChild(celulaStatusEmprestimo);
 
         // Cria a célula para as ações (ícones de editar e excluir)
